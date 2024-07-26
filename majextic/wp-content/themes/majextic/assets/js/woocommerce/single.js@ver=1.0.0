@@ -1,0 +1,38 @@
+(function ($) {
+    'use strict';
+    var $body = $('body');
+
+    $body.on('click', '.wc-tabs li a, ul.tabs li a', function (e) {
+        e.preventDefault();
+        var $tab = $(this);
+        var $tabs_wrapper = $tab.closest('.wc-tabs-wrapper, .woocommerce-tabs');
+        var $control = $tab.closest('li').attr('aria-controls');
+        $tabs_wrapper.find('.resp-accordion').removeClass('active');
+        $('.' + $control).addClass('active');
+        if ($tab.attr('href') === '#tab-more_seller_product') {
+
+            setTimeout(function () {
+                $('.woocommerce-Tabs-panel--more_seller_product').data('swiper').update();
+            }, 200);
+        } else if ($tab.attr('href') === '#tab-seller') {
+            setTimeout(function () {
+                $('.baloca-dokan-more-product').data('swiper').update();
+            }, 200);
+        }
+    }).on('click', 'h2.resp-accordion', function (e) {
+        e.preventDefault();
+        var $tab = $(this);
+        var $tabs_wrapper = $tab.closest('.wc-tabs-wrapper, .woocommerce-tabs');
+        var $tabs = $tabs_wrapper.find('.wc-tabs, ul.tabs');
+        if ($tab.hasClass('active')) {
+            return;
+        }
+        $tabs_wrapper.find('.resp-accordion').removeClass('active');
+        $tab.addClass('active');
+        $tabs.find('li').removeClass('active');
+        $tabs.find($tab.data('control')).addClass('active');
+        $tabs_wrapper.find('.wc-tab, .panel:not(.panel .panel)').hide(300);
+        $tabs_wrapper.find($tab.attr('aria-controls')).show(300);
+    });
+
+})(jQuery);

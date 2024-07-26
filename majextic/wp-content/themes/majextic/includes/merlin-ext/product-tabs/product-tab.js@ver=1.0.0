@@ -1,0 +1,3 @@
+(function($){'use strict';function productAccordion(){$('.accordion-item-tab.active .content-accordion').slideDown(function(){$(window).trigger('resize');});$('.title-accordion a').on('click',function(e){e.preventDefault();let $parent=$(this).closest('.accordion-item-tab'),$content=$('.content-accordion',$parent);if($parent.hasClass('active')){$parent.removeClass('active');$content.slideUp();return;}
+$parent.addClass('active');$content.slideToggle(function(){$(window).trigger('resize');});});}
+$(document).ready(function(){productAccordion();});})(jQuery);

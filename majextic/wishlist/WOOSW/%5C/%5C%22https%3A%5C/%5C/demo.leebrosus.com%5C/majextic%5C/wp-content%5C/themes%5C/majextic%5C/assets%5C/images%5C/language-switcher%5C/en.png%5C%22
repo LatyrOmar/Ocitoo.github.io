@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="en-US">
+<head><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="//gmpg.org/xfn/11">
+<title>Wishlist &#8211; Majextic</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Readex%20Pro%3Awght%40400%3B600%3B700&#038;subset=latin%2Clatin-ext&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro%3Awght%40400%3B600%3B700&#038;subset=latin%2Clatin-ext&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro%3Awght%40400%3B600%3B700&#038;subset=latin%2Clatin-ext&#038;display=swap" /></noscript>
+<meta name="robots" content="max-image-preview:large" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//demothemedh.b-cdn.net" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link href="//demothemedh.b-cdn.net" rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="Majextic &raquo; Feed" href="https://demo.leebrosus.com/majextic/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Majextic &raquo; Comments Feed" href="https://demo.leebrosus.com/majextic/comments/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-active-filters-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/active-filters.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-add-to-cart-form-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/add-to-cart-form.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-packages-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/packages-style.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-all-products-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-products.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-all-reviews-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-reviews.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-attribute-filter-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/attribute-filter.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-breadcrumbs-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/breadcrumbs.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-catalog-sorting-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/catalog-sorting.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-customer-account-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/customer-account.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-featured-category-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-category.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-featured-product-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-product.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-mini-cart-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-price-filter-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-filter.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-add-to-cart-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-add-to-cart.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-button-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-button.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-categories-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-categories.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-image-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-image.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-image-gallery-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-image-gallery.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-query-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-query.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-results-count-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-results-count.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-reviews-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-reviews.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-sale-badge-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-sale-badge.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-search-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-search.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-sku-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-sku.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-stock-indicator-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-stock-indicator.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-summary-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-summary.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-title-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-title.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-rating-filter-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/rating-filter.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-reviews-by-category-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/reviews-by-category.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-reviews-by-product-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/reviews-by-product.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-product-details-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-details.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-single-product-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/single-product.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-stock-filter-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stock-filter.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-cart-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/cart.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-checkout-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/checkout.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-style-mini-cart-contents-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart-contents.css?ver=1693193642" media="all" />
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel="stylesheet" id="contact-form-7-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1693193642" media="all" />
+<style id="woocommerce-inline-inline-css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel="stylesheet" id="hfe-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-icons-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1693193642" media="all" />
+<link rel="stylesheet" id="elementor-frontend-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1693064249" media="all" />
+<link data-minify="1" rel="stylesheet" id="swiper-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-5-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/post-5.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-global-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/global.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-235-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/post-235.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="hfe-widgets-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-277-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/post-277.css?ver=1693193683" media="all" />
+<link rel="stylesheet" id="hint-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/plugins/woo-smart-compare/assets/libs/hint/hint.min.css?ver=6.3" media="all" />
+<link rel="stylesheet" id="perfect-scrollbar-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/plugins/woo-smart-compare/assets/libs/perfect-scrollbar/css/perfect-scrollbar.min.css?ver=6.3" media="all" />
+<link data-minify="1" rel="stylesheet" id="perfect-scrollbar-wpc-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woo-smart-compare/assets/libs/perfect-scrollbar/css/custom-theme.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="woosc-frontend-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woo-smart-compare/assets/css/frontend.css?ver=1693193642" media="all" />
+<link data-minify="1" rel="stylesheet" id="woosw-icons-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woo-smart-wishlist/assets/css/icons.css?ver=1693193643" media="all" />
+<link data-minify="1" rel="stylesheet" id="woosw-frontend-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/woo-smart-wishlist/assets/css/frontend.css?ver=1693193643" media="all" />
+<style id="woosw-frontend-inline-css">
+.woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-notice { background-color: #5fbd74; } .woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-popup-content-bot-inner a:hover { color: #5fbd74; border-color: #5fbd74; } 
+</style>
+<link data-minify="1" rel="stylesheet" id="wpcvs-frontend-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/wpc-variation-swatches/assets/css/frontend.css?ver=1693193643" media="all" />
+<link data-minify="1" rel="stylesheet" id="majextic-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/themes/majextic/style.css?ver=1693193643" media="all" />
+<style id="majextic-style-inline-css">
+:root{--primary:#5365C6;--primary_hover:#4A5AB2;--secondary:#FF5630;--secondary_hover:#e54d2b;--text:#6F7175;--accent:#0A1624;--border:#E1E1E1;--light:#999999;--background:#FFFFFF;--background2:#F0F2F5;}.dark-mode{
+    --e-global-color-text: #fff;
+    --e-global-color-primary: #fff;
+    --e-global-color-secondary: #fff;
+    --e-global-color-accent: #fff;
+    --e-global-color-border: rgba(255, 255, 255, 0.1);
+    --e-global-color-dark: #111;
+    --e-global-color-light: #555;
+    --e-global-color-background: #333;
+    --e-global-color-background2: #000;
+    
+    --text: #fff;
+    --primary: #fff;
+    --secondary: #fff;
+    --accent: #fff;
+    --border: rgba(255, 255, 255, 0.1);
+    --dark: #000;
+    --light: #A4A4A4;
+    --background: #333;
+    --background2: #222;
+}
+.modal-quick-view-popup{ --modal-height: 650px;}
+</style>
+<link data-minify="1" rel="stylesheet" id="elementor-post-1722-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/post-1722.css?ver=1693193643" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-611-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/uploads/elementor/css/post-611.css?ver=1693193643" media="all" />
+<link data-minify="1" rel="stylesheet" id="majextic-elementor-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/themes/majextic/assets/css/elementor.css?ver=1693193644" media="all" />
+<link data-minify="1" rel="stylesheet" id="majextic-woocommerce-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/themes/majextic/assets/css/woocommerce.css?ver=1693193644" media="all" />
+<link data-minify="1" rel="stylesheet" id="majextic-child-style-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/themes/demo-child/style.css?ver=1693193644" media="all" />
+<script src="https://demothemedh.b-cdn.net/majextic/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js" defer></script>
+<script src="https://demothemedh.b-cdn.net/majextic/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<link rel="https://api.w.org/" href="https://demo.leebrosus.com/majextic/wp-json/" /><link rel="alternate" type="application/json" href="https://demo.leebrosus.com/majextic/wp-json/wp/v2/pages/12" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.leebrosus.com/majextic/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3" />
+<meta name="generator" content="WooCommerce 8.0.2" />
+<link rel="canonical" href="https://demo.leebrosus.com/majextic/wishlist/" />
+<link rel="shortlink" href="https://demo.leebrosus.com/majextic/?p=12" />
+<link rel="alternate" type="application/json+oembed" href="https://demo.leebrosus.com/majextic/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.leebrosus.com%2Fmajextic%2Fwishlist%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://demo.leebrosus.com/majextic/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.leebrosus.com%2Fmajextic%2Fwishlist%2F&#038;format=xml" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/fonts/majextic-icon.woff2" as="font" crossorigin>
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<meta name="generator" content="Elementor 3.15.3; features: e_dom_optimization, e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+<meta name="generator" content="Powered by Slider Revolution 6.6.8 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript> </head>
+<body class="page-template-default page page-id-12 wp-custom-logo wp-embed-responsive theme-majextic woocommerce-no-js ehf-header ehf-footer ehf-template-majextic ehf-stylesheet-demo-child woocommerce-active product-block-style-1 elementor-default elementor-kit-5">
+<div id="majextic-main-content">
+<div class="main-header-content">
+<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+<p class="main-title bhf-hidden" itemprop="headline"><a href="https://demo.leebrosus.com/majextic" title="Majextic" rel="home">Majextic</a></p>
+<div data-elementor-type="wp-post" data-elementor-id="235" class="elementor elementor-235">
+<div class="elementor-element elementor-element-56bd620 e-flex e-con-boxed e-con" data-id="56bd620" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-557e53a e-con-full e-flex e-con" data-id="557e53a" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-4371c76 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="4371c76" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-location"></i> </span>
+<span class="elementor-icon-list-text">Find a store near you! </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5b2b7eb e-con-full e-flex e-con" data-id="5b2b7eb" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-4aaf274 elementor-widget elementor-widget-heading" data-id="4aaf274" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">DRIVE AWAY WITH THE BEST DEALS! UP TO 25% OFF*</h2> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a03eeb5 e-con-full elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile e-flex e-con" data-id="a03eeb5" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-5569267 elementor-widget elementor-widget-majextic-language-switcher" data-id="5569267" data-element_type="widget" data-widget_type="majextic-language-switcher.default">
+<div class="elementor-widget-container">
+<div class="skeleton-body"><script type="text/template">"    <div class=\"majextic-language-switcher\">\n        <ul class=\"menu\">\n            <li class=\"item\">\n                <div class=\"language-switcher-head\">\n                    <img width=\"18\" height=\"12\" src=\"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/themes\/majextic\/assets\/images\/language-switcher\/en.png\" alt=\"WPML\">\n                    <span>\n                            <span class=\"title\">English<\/span>\n                            <i class=\"majextic-icon-angle-down\"><\/i>\n                        <\/span>\n                <\/div>\n                <ul class=\"sub-item\">\n                    <li>\n                        <a href=\"#\">\n                            <img width=\"18\" height=\"12\" src=\"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/themes\/majextic\/assets\/images\/language-switcher\/de.png\" alt=\"WPML\">\n                            <span>German<\/span>\n                        <\/a>\n                    <\/li>\n                    <li>\n                        <a href=\"#\">\n                            <img width=\"18\" height=\"12\" src=\"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/themes\/majextic\/assets\/images\/language-switcher\/it.png\" alt=\"WPML\">\n                            <span>Italian<\/span>\n                        <\/a>\n                    <\/li>\n                    <li>\n                        <a href=\"#\">\n                            <img width=\"18\" height=\"12\" src=\"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/themes\/majextic\/assets\/images\/language-switcher\/hi.png\" alt=\"WPML\">\n                            <span>Hindi<\/span>\n                        <\/a>\n                    <\/li>\n                    <li>\n                        <a href=\"#\">\n                            <span>Requires WPML<\/span>\n                        <\/a>\n                    <\/li>\n                <\/ul>\n            <\/li>\n        <\/ul>\n    <\/div>\n\t"</script><div class="skeleton-item skeleton-language-switcher"></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-03555da e-flex e-con-boxed e-con" data-id="03555da" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-b0bafcd e-con-full e-flex e-con" data-id="b0bafcd" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-18295bd elementor-widget elementor-widget-site-logo" data-id="18295bd" data-element_type="widget" data-settings="{&quot;align&quot;:&quot;left&quot;,&quot;align_mobile&quot;:&quot;center&quot;,&quot;width&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;caption_space_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="site-logo.default">
+<div class="elementor-widget-container">
+<div class="hfe-site-logo">
+<a data-elementor-open-lightbox class="elementor-clickable" href="https://demo.leebrosus.com/majextic">
+<div class="hfe-site-logo-set">
+<div class="hfe-site-logo-container">
+<img class="hfe-site-logo-img elementor-animation-" src="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/2023/07/logo.svg" alt />
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5bf167d e-con-full elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile e-flex e-con" data-id="5bf167d" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-9e2487b elementor-widget elementor-widget-majextic-search" data-id="9e2487b" data-element_type="widget" data-widget_type="majextic-search.default">
+<div class="elementor-widget-container">
+<div class="elementor-search-form-wrapper">
+<div class="ajax-search">
+<form role="search" method="get" class="woocommerce-product-search" action="https://demo.leebrosus.com/majextic/">
+<div class="majextic-search-product-form">
+<div class="product-cat">
+<div class="product-cat-label">
+<div class="box">
+<span class="product-cat-name">All Category</span>
+<i class="majextic-icon-angle-down"></i>
+<select name="product_cat" id="product_cat0" class="dropdown_product_cat_ajax">
+<option value selected="selected">All Category</option>
+<option class="level-0" value="auto-tires">Auto &amp; Tires</option>
+<option class="level-0" value="auto-safety-accessories">Auto Safety Accessories</option>
+<option class="level-0" value="automotive-interior">Automotive Interior</option>
+<option class="level-0" value="automotive-tools-equipment">Automotive Tools &amp; Equipment</option>
+<option class="level-0" value="brakes-and-brake-parts">Brakes and Brake Parts</option>
+<option class="level-0" value="replacement-parts">Replacement Parts</option>
+<option class="level-0" value="steering-wheel-covers">Steering Wheel Covers</option>
+</select>
+</div>
+</div>
+</div>
+<div class="search-wrapper">
+<input type="search" id="woocommerce-product-search-field-1" class="search-field" placeholder="I’m looking for&hellip;" autocomplete="off" value name="s" />
+<input type="hidden" name="post_type" value="product" />
+</div>
+<button type="submit" value="Search">
+<i class="majextic-icon-search"></i>
+<span>Search</span>
+</button>
+</div>
+</form>
+<div class="ajax-search-result d-none">
+<div class="inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-13ddbdf e-con-full e-flex e-con" data-id="13ddbdf" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-9750526 elementor-hidden-desktop elementor-hidden-laptop elementor-hidden-tablet_extra elementor-widget elementor-widget-majextic-menu-canvas" data-id="9750526" data-element_type="widget" data-widget_type="majextic-menu-canvas.default">
+<div class="elementor-widget-container">
+<div class="elementor-canvas-menu-wrapper">
+<a href="#" class="menu-mobile-nav-button">
+<span class="toggle-text screen-reader-text">Menu</span>
+<i class="majextic-icon-bars"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-323ceae elementor-hidden-desktop elementor-hidden-laptop elementor-hidden-tablet_extra elementor-widget elementor-widget-majextic-search" data-id="323ceae" data-element_type="widget" data-widget_type="majextic-search.default">
+<div class="elementor-widget-container">
+<div class="elementor-search-form-wrapper">
+<div class="site-header-search">
+<a href="#" class="button-search-popup"><i class="majextic-icon-search"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-be00f32 header-account-content-left elementor-widget elementor-widget-majextic-account" data-id="be00f32" data-element_type="widget" data-widget_type="majextic-account.default">
+<div class="elementor-widget-container">
+<div class="site-header-account">
+<a class="majextic-group-header-action" data-toggle="button-side" data-target=".site-account-side" href="#">
+<span class="account-user group-icon-action">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-user"></i> </span>
+<span class="account-content group-icon-content">
+<span class="sub-text">Sign in</span><span class="sub-title">Account</span> </span>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-03caace elementor-widget elementor-widget-majextic-wishlist" data-id="03caace" data-element_type="widget" data-widget_type="majextic-wishlist.default">
+<div class="elementor-widget-container">
+<div class="elementor-wishlist-wrapper">
+<div class="site-header-wishlist woosw-check">
+<a class="header-wishlist majextic-group-header-action" data-toggle="button-side" data-target=".site-wishlist-side" href="https://demo.leebrosus.com/majextic/wishlist/WOOSW">
+<span class="group-icon-action">
+<i class="majextic-icon-heart"></i>
+<span class="count">0</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fa338c0 elementor-widget elementor-widget-majextic-header-cart" data-id="fa338c0" data-element_type="widget" data-widget_type="majextic-header-cart.default">
+<div class="elementor-widget-container">
+<div class="site-header-cart menu">
+<a class="cart-contents majextic-group-header-action" href="https://demo.leebrosus.com/majextic/cart/" aria-label="View your shopping cart">
+<span class="group-icon-action">
+<i class="majextic-icon-shopping-cart"></i>
+<span class="count">
+0 </span>
+</span>
+<span class="group-icon-content">
+<span class="sub-text">Total</span>
+<span class="sub-title"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span></span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-d5f8b45 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile e-flex e-con-boxed e-con" data-id="d5f8b45" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-4fa059b e-con-full e-flex e-con" data-id="4fa059b" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-5d66c9c elementor-widget elementor-widget-majextic-nav-menu" data-id="5d66c9c" data-element_type="widget" data-widget_type="majextic-nav-menu.default">
+<div class="elementor-widget-container">
+<div class="elementor-nav-menu-wrapper">
+<nav class="site-navigation">
+<div class="primary-navigation"><ul id="menu-1-5d66c9c" class="menu"><li id="menu-item-619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-619"><a href="#"><span class="menu-title">Home</span></a>
+<ul class="sub-menu">
+<li id="menu-item-620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-620"><a href="https://demo.leebrosus.com/majextic/"><span class="menu-title">Home 1</span></a></li>
+<li id="menu-item-853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-853"><a href="https://demo.leebrosus.com/majextic/home-2/"><span class="menu-title">Home 2</span></a></li>
+<li id="menu-item-852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-852"><a href="https://demo.leebrosus.com/majextic/home-3/"><span class="menu-title">Home 3</span></a></li>
+<li id="menu-item-851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="https://demo.leebrosus.com/majextic/home-4/"><span class="menu-title">Home 4</span></a></li>
+<li id="menu-item-850" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-850"><a href="https://demo.leebrosus.com/majextic/home-5/"><span class="menu-title">Home 5</span></a></li>
+<li id="menu-item-849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-849"><a href="https://demo.leebrosus.com/majextic/home-6/"><span class="menu-title">Home 6</span></a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-621"><a href="https://demo.leebrosus.com/majextic/about-us/"><span class="menu-title">About Us</span></a></li>
+<li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-264 has-mega-menu has-containerwidth"><a href="https://demo.leebrosus.com/majextic/shop/"><span class="menu-title">Shop</span></a><span class="icon-down-megamenu"></span><ul class="sub-menu mega-menu mega-fullwidth mega-containerwidth"><li class="mega-menu-item"> <div data-elementor-type="page" data-elementor-id="1722" class="elementor elementor-1722">
+<div class="elementor-element elementor-element-11970e3 e-grid e-con-boxed e-con" data-id="11970e3" data-element_type="container" data-settings="{&quot;grid_columns_grid&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;grid_rows_grid&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;1&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_mobile&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;1&quot;,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;boxed&quot;,&quot;grid_outline&quot;:&quot;yes&quot;,&quot;grid_columns_grid_laptop&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_tablet_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_tablet&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_mobile_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_mobile&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]},&quot;grid_rows_grid_laptop&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_tablet_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_tablet&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_mobile_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-3e9ff19 e-flex e-con-boxed e-con" data-id="3e9ff19" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-743c7a9 elementor-widget elementor-widget-heading" data-id="743c7a9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Shop Page</h2> </div>
+</div>
+<div class="elementor-element elementor-element-45f31e1 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="45f31e1" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=2">
+<span class="elementor-icon-list-text">2 Columns</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=3">
+<span class="elementor-icon-list-text">3 Columns</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=4">
+<span class="elementor-icon-list-text">4 Columns</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=5&#038;woocommerce_archive_layout=canvas">
+<span class="elementor-icon-list-text">5 Columns</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=6&#038;woocommerce_archive_layout=canvas">
+<span class="elementor-icon-list-text">6 Columns</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-c932e0f e-flex e-con-boxed e-con" data-id="c932e0f" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-e489133 elementor-widget elementor-widget-heading" data-id="e489133" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Shop Template</h2> </div>
+</div>
+<div class="elementor-element elementor-element-6141929 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="6141929" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1698">
+<span class="elementor-icon-list-text">Shop - Template 1</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1698">
+<span class="elementor-icon-list-text">Shop - Template 2</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1706">
+<span class="elementor-icon-list-text">Shop - Template 3</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_products=1711">
+<span class="elementor-icon-list-text">Shop - Template 4</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=6&#038;woocommerce_archive_layout=canvas">
+<span class="elementor-icon-list-text">Shop - Sidebar Canvas</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-12e475a e-flex e-con-boxed e-con" data-id="12e475a" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-9156120 elementor-widget elementor-widget-heading" data-id="9156120" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Product Detail</h2> </div>
+</div>
+<div class="elementor-element elementor-element-6dfcdfd elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="6dfcdfd" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/2-pieces-300-db-super-train-horn-for-suv-trucks-car-boat-motorcycles-new/">
+<span class="elementor-icon-list-text">Style 1</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/renogy-60a-dc-to-dc-battery-charger/?woocommerce_detail_product_style=2">
+<span class="elementor-icon-list-text">Style 2</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/niche-charger-automatic-smart-battery-maintainer-12v-0-75a-for-atv/">
+<span class="elementor-icon-list-text">Style 3</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/gooloo-2amp-12v-smart-battery-charger-maintainer-car-trickle-chargers/">
+<span class="elementor-icon-list-text">Sidebar Left</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/disc-brake-rotor/">
+<span class="elementor-icon-list-text">Sidebar Right</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-4a60fd0 e-flex e-con-boxed e-con" data-id="4a60fd0" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-0e688df elementor-widget elementor-widget-heading" data-id="0e688df" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Product Type</h2> </div>
+</div>
+<div class="elementor-element elementor-element-e67d174 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="e67d174" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/rexing-v1-car-dash-cam-2-4-lcd-fhd-1080p-170-wide-angle-dashboard-camera-recorder-with-g-sensor-wdr-loop-recording/">
+<span class="elementor-icon-list-text">Simple</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/2-pieces-300-db-super-train-horn-for-suv-trucks-car-boat-motorcycles-new/">
+<span class="elementor-icon-list-text">Variable</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/towsmart-adjustable-ball-mount-fits-2-reciever-includes-clip-and-quick-release-pin-rated-up-to-5000-lb/">
+<span class="elementor-icon-list-text">Grouped</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://demo.leebrosus.com/majextic/product/universal-fit-2-in-out-13-overall-length-catalytic-converter-w-o2-sensor-port/">
+<span class="elementor-icon-list-text">External/Affiliate</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li></ul></li>
+<li id="menu-item-918" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-918"><a href="https://demo.leebrosus.com/majextic/blog/"><span class="menu-title">Blog</span></a>
+<ul class="sub-menu">
+<li id="menu-item-1716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a href="https://demo.leebrosus.com/majextic/blog/"><span class="menu-title">Blog &#8211; Default</span></a></li>
+<li id="menu-item-1717" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1717"><a href="https://demo.leebrosus.com/majextic/category/lifestyle/"><span class="menu-title">Blog &#8211; Grid</span></a></li>
+<li id="menu-item-1718" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1718"><a href="https://demo.leebrosus.com/majextic/category/tips-tricks/"><span class="menu-title">Blog &#8211; List</span></a></li>
+<li id="menu-item-1719" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1719"><a href="https://demo.leebrosus.com/majextic/category/social-media/"><span class="menu-title">Blog &#8211; Right Sidebar</span></a></li>
+<li id="menu-item-1587" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1587"><a href="https://demo.leebrosus.com/majextic/this-10-min-stretch-routine-can-eliminate-stiffness/"><span class="menu-title">Blog Detail</span></a></li>
+</ul>
+</li>
+<li id="menu-item-623" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-623"><a href="#"><span class="menu-title">Pages</span></a>
+<ul class="sub-menu">
+<li id="menu-item-1556" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1556"><a href="https://demo.leebrosus.com/majextic/cart/"><span class="menu-title">Cart</span></a></li>
+<li id="menu-item-1557" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1557"><a href="https://demo.leebrosus.com/majextic/checkout/"><span class="menu-title">Checkout</span></a></li>
+<li id="menu-item-263" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-12 current_page_item menu-item-263"><a href="https://demo.leebrosus.com/majextic/wishlist/"><span class="menu-title">Wishlist</span></a></li>
+<li id="menu-item-622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-622"><a href="https://demo.leebrosus.com/majextic/faqs/"><span class="menu-title">FAQ’s</span></a></li>
+<li id="menu-item-917" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-917"><a href="https://demo.leebrosus.com/majextic/404-page/"><span class="menu-title">404 Page</span></a></li>
+<li id="menu-item-916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://demo.leebrosus.com/majextic/icons/"><span class="menu-title">Icons</span></a></li>
+</ul>
+</li>
+<li id="menu-item-669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-669"><a href="https://demo.leebrosus.com/majextic/contact/"><span class="menu-title">Contact</span></a></li>
+</ul></div> </nav>
+</div>
+</div>
+</div>
+</div>
+<div class="make-column-clickable-elementor elementor-element elementor-element-5148039 e-con-full e-flex e-con" style="cursor: pointer;" data-column-clickable="#" data-column-clickable-blank="_self" data-id="5148039" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-element elementor-element-68dad8b elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="68dad8b" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-headphone"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<div class="elementor-icon-box-title">
+<span>
+Call us free: </span>
+</div>
+<p class="elementor-icon-box-description">
+(888) 910-2330 </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="breadcrumb-wrap"><div class="breadcrumb-overlay"></div> <div data-elementor-type="wp-post" data-elementor-id="611" class="elementor elementor-611">
+<div class="elementor-element elementor-element-afbc0e2 e-flex e-con-boxed e-con" data-id="afbc0e2" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-4682929 hidden-majextic-title-yes hidden-majextic-title-single-yes elementor-widget elementor-widget-majextic-breadcrumb" data-id="4682929" data-element_type="widget" data-widget_type="majextic-breadcrumb.default">
+<div class="elementor-widget-container">
+<div class="majextic-woocommerce-title">Wishlist</div><nav class="woocommerce-breadcrumb"><a href="https://demo.leebrosus.com/majextic">Home</a><i class="majextic-icon-angle-right"></i>Wishlist</nav> </div>
+</div>
+</div>
+</div>
+</div>
+</div> <main class="site-main post-12 page type-page status-publish hentry" role="main">
+<div class="container clearfix">
+<div id="primary" class="content-area">
+<header class="page-header">
+</header>
+<div class="page-content">
+<div class="entry-content">
+<div class="woosw-list"><div class="woosw-content-mid-notice">There are no products on the wishlist!</div><div class="woosw-actions"><div class="woosw-share"><span class="woosw-share-label">Share on:</span><a class="woosw-share-facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdemo.leebrosus.com%2Fmajextic%2Fwishlist%2FWOOSW" target="_blank">Facebook</a><a class="woosw-share-twitter" href="https://twitter.com/share?url=https%3A%2F%2Fdemo.leebrosus.com%2Fmajextic%2Fwishlist%2FWOOSW" target="_blank">Twitter</a><a class="woosw-share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdemo.leebrosus.com%2Fmajextic%2Fwishlist%2FWOOSW" target="_blank">Pinterest</a><a class="woosw-share-mail" href="/cdn-cgi/l/email-protection#b18ed3ded5c88cd9c5c5c1c29482f09483f79483f7d5d4dcde9fddd4d4d3c3dec2c4c29fd2dedc9483f7dcd0dbd4c9c5d8d29483f7c6d8c2d9ddd8c2c59483f7e6fefee2e6" target="_blank">Mail</a></div><div class="woosw-copy"><span class="woosw-copy-label">Wishlist link:</span><span class="woosw-copy-url"><input id="woosw_copy_url" type="url" value="https://demo.leebrosus.com/majextic/wishlist/WOOSW" readonly /></span><span class="woosw-copy-btn"><input id="woosw_copy_btn" type="button" value="Copy" /></span></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+<div class="footer-width-fixer"> <div data-elementor-type="wp-post" data-elementor-id="277" class="elementor elementor-277">
+<div class="elementor-element elementor-element-3e979c0 e-grid e-con-boxed e-con" data-id="3e979c0" data-element_type="container" data-settings="{&quot;grid_columns_grid&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;3&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;1&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_mobile&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;1&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_mobile_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]},&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;,&quot;grid_outline&quot;:&quot;yes&quot;,&quot;grid_columns_grid_laptop&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_tablet_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_tablet&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_columns_grid_mobile&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]},&quot;grid_rows_grid_laptop&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_tablet_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_tablet&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;grid_rows_grid_mobile_extra&quot;:{&quot;unit&quot;:&quot;fr&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-6f0e583 elementor-view-framed elementor-position-left elementor-vertical-align-middle elementor-shape-circle elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="6f0e583" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-shipping"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<div class="elementor-icon-box-title">
+<span>
+Fast and free delivery </span>
+</div>
+<p class="elementor-icon-box-description">
+Free delivery for all orders over $140 </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8548a2f elementor-view-framed elementor-position-left elementor-vertical-align-middle elementor-shape-circle elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="8548a2f" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-headphone"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<div class="elementor-icon-box-title">
+<span>
+Fast and free delivery </span>
+</div>
+<p class="elementor-icon-box-description">
+Free delivery for all orders over $140 </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-42534e5 elementor-view-framed elementor-position-left elementor-vertical-align-middle elementor-shape-circle elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="42534e5" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-shield"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<div class="elementor-icon-box-title">
+<span>
+Money back guarantee </span>
+</div>
+<p class="elementor-icon-box-description">
+We return money within 30 days </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5758c5c e-flex e-con-boxed e-con" data-id="5758c5c" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-d1cc024 e-con-full e-flex e-con" data-id="d1cc024" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-c0f584e elementor-widget elementor-widget-site-logo" data-id="c0f584e" data-element_type="widget" data-settings="{&quot;align&quot;:&quot;left&quot;,&quot;width&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;space_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;image_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_padding_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;caption_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;caption_space_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;caption_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="site-logo.default">
+<div class="elementor-widget-container">
+<div class="hfe-site-logo">
+<a data-elementor-open-lightbox class="elementor-clickable" href="https://demo.leebrosus.com/majextic">
+<div class="hfe-site-logo-set">
+<div class="hfe-site-logo-container">
+<img class="hfe-site-logo-img elementor-animation-" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="logo-white" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/2023/07/logo-white.svg" /><noscript><img class="hfe-site-logo-img elementor-animation-"  src="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/2023/07/logo-white.svg" alt="logo-white"/></noscript>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-42f72eb elementor-widget elementor-widget-text-editor" data-id="42f72eb" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>Aenean vel elit scelerisque <br/>mauris pellentesque. Egestas <br/>purus viverra accumsan in nisl.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-0a38f46 e-con-full e-flex e-con" data-id="0a38f46" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-96577db elementor-widget elementor-widget-heading" data-id="96577db" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Information</h2> </div>
+</div>
+<div class="elementor-element elementor-element-c95e939 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="c95e939" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">About</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Advertising</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Business Development</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Careers</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Permissions</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Contact</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8428936 e-con-full e-flex e-con" data-id="8428936" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-93afd4d elementor-widget elementor-widget-heading" data-id="93afd4d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Account</h2> </div>
+</div>
+<div class="elementor-element elementor-element-aae1f77 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="aae1f77" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">My Account </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Shopping Cart </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Custom Service</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Delivery Infomation</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-852b3f9 e-con-full e-flex e-con" data-id="852b3f9" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-21f2ac8 elementor-widget elementor-widget-heading" data-id="21f2ac8" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Shipping</h2> </div>
+</div>
+<div class="elementor-element elementor-element-834b844 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-icon-list-position-left elementor-widget elementor-widget-icon-list" data-id="834b844" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Weekly Ad </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Top Brands </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Store Services </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="#">
+<span class="elementor-icon-list-text">Promos & Coupons</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8f4405b e-con-full e-flex e-con" data-id="8f4405b" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-bc3b556 e-con-full e-flex e-con" data-id="bc3b556" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-447260d elementor-widget elementor-widget-heading" data-id="447260d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Our Company</h2> </div>
+</div>
+<div class="elementor-element elementor-element-4107726 elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-view-default elementor-widget elementor-widget-icon-box" data-id="4107726" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="majextic-icon- majextic-icon-phone"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<div class="elementor-icon-box-title">
+<span>
+Call us free: </span>
+</div>
+<p class="elementor-icon-box-description">
+(888) 910-2330 </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2d60239 elementor-widget elementor-widget-text-editor" data-id="2d60239" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>15051 E Alameda Pkwy, Aurora,<br/>CO 80012, USA</p><p>Phone: 1234 5678 5576</p><p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="33505c5d4752504773405a47565d525e561d505c5e">[email&#160;protected]</a></p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e384f09 e-flex e-con-boxed e-con" data-id="e384f09" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-b15312d e-con-full e-flex e-con" data-id="b15312d" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-0a5585a elementor-widget elementor-widget-heading" data-id="0a5585a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<div class="elementor-heading-title elementor-size-default">Copyright © 2023 Majextic. All Rights Reserved.</div> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3b12a2d e-con-full e-flex e-con" data-id="3b12a2d" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-5e346ec elementor-widget elementor-widget-image" data-id="5e346ec" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="286" height="26" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20286%2026'%3E%3C/svg%3E" class="attachment-full size-full wp-image-287" alt data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/2023/07/payment.png" /><noscript><img width="286" height="26" src="https://demothemedh.b-cdn.net/majextic/wp-content/uploads/2023/07/payment.png" class="attachment-full size-full wp-image-287" alt="" /></noscript> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </footer>
+</div> 
+<div class="woosc-popup woosc-search">
+<div class="woosc-popup-inner">
+<div class="woosc-popup-content">
+<div class="woosc-popup-content-inner">
+<div class="woosc-popup-close"></div>
+<div class="woosc-search-input">
+<input type="search" id="woosc_search_input" placeholder="Type any keyword to search..." />
+</div>
+<div class="woosc-search-result"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="woosc-popup woosc-settings">
+<div class="woosc-popup-inner">
+<div class="woosc-popup-content">
+<div class="woosc-popup-content-inner">
+<div class="woosc-popup-close"></div>
+<ul class="woosc-settings-tools">
+<li>
+<label><input type="checkbox" class="woosc-settings-tool" value="hide_similarities" id="woosc_hide_similarities" /> Hide similarities </label></li>
+<li>
+<label><input type="checkbox" class="woosc-settings-tool" value="highlight_differences" id="woosc_highlight_differences" /> Highlight differences </label></li>
+</ul>
+Select the fields to be shown. Others will be hidden. Drag and drop to rearrange the order. <ul class="woosc-settings-fields">
+<li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="4j1a" checked /><span class="move">Image</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="6d62" checked /><span class="move">SKU</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="1vrn" checked /><span class="move">Rating</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="xuls" checked /><span class="move">Price</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="1mwg" checked /><span class="move">Stock</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="4nb5" checked /><span class="move">Availability</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="3zhi" checked /><span class="move">Add to cart</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="6kpe" checked /><span class="move">Description</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="cysa" checked /><span class="move">Content</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="ihbr" checked /><span class="move">Weight</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="ne0f" checked /><span class="move">Dimensions</span></li><li class="woosc-settings-field-li"><input type="checkbox" class="woosc-settings-field" value="un1a" checked /><span class="move">Additional information</span></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="woosc-popup woosc-share">
+<div class="woosc-popup-inner">
+<div class="woosc-popup-content">
+<div class="woosc-popup-content-inner">
+<div class="woosc-popup-close"></div>
+<div class="woosc-share-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="woosc-area" class="woosc-area woosc-bar-bottom woosc-bar-right woosc-bar-click-outside-yes woosc-hide-checkout" data-bg-color="#292a30" data-btn-color="#00a0d2">
+<div class="woosc-inner">
+<div class="woosc-table">
+<div class="woosc-table-inner">
+<a href="#close" id="woosc-table-close" class="woosc-table-close hint--left" aria-label="Close"><span class="woosc-table-close-icon"></span></a>
+<div class="woosc-table-items"></div>
+</div>
+</div>
+<div class="woosc-bar">
+<div class="woosc-bar-notice">
+Click outside to hide the comparison bar </div>
+<a href="#print" class="woosc-bar-print hint--top" aria-label="Print"></a>
+<a href="#share" class="woosc-bar-share hint--top" aria-label="Share"></a>
+<a href="#search" class="woosc-bar-search hint--top" aria-label="Add product"></a>
+<div class="woosc-bar-items"></div>
+<div class="woosc-bar-btn woosc-bar-btn-text">
+<div class="woosc-bar-btn-icon-wrapper">
+<div class="woosc-bar-btn-icon-inner"><span></span><span></span><span></span>
+</div>
+</div>
+Compare </div>
+</div>
+</div>
+</div>
+<div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
+<svg class="screen-reader-text">
+<clipPath id="lb-clip-path-custom-1" clipPathUnits="objectBoundingBox">
+<path d="M0.907,0.098 C0.988,0.178,1,0.403,0.999,0.542 C0.998,0.68,0.982,0.816,0.9,0.895 C0.819,0.973,0.674,0.994,0.523,0.999 C0.372,1,0.215,0.993,0.121,0.914 C0.027,0.836,-0.005,0.689,0,0.548 C0.005,0.406,0.048,0.184,0.142,0.104 C0.236,0.025,0.382,0.001,0.53,0 C0.677,-0.001,0.826,0.019,0.907,0.098"></path>
+</clipPath>
+<clipPath id="lb-clip-path-custom-2" clipPathUnits="objectBoundingBox">
+<path d="M0.108,0.208 C0.188,0.116,0.317,0.101,0.433,0.072 C0.548,0.043,0.65,0,0.755,0.031 C0.859,0.062,0.967,0.166,1,0.316 C1,0.465,1,0.659,0.91,0.805 C0.796,0.951,0.594,1,0.424,1 C0.252,0.977,0.112,0.809,0.056,0.639 C0,0.47,0.029,0.3,0.108,0.208"></path>
+</clipPath>
+<clipPath id="lb-clip-path-custom-3" clipPathUnits="objectBoundingBox">
+<path d="M0,0.06 C0,0.027,0.009,0,0.019,0.001 L0.982,0.069 C0.992,0.07,1,0.096,1,0.128 V0.942 C1,0.974,0.992,1,0.981,1 H0.019 C0.008,1,0,0.974,0,0.942 V0.06 L0,0.06"></path>
+</clipPath>
+<clipPath id="lb-clip-path-custom-4" clipPathUnits="objectBoundingBox">
+<path d="M0,0 h1 v0.922 l-0.5,0.078 L0,0.922 V0"></path>
+</clipPath>
+</svg>
+<div class="quick-shop-wrapper products product-type-variable">
+<div class="quick-shop-wrapper-inner">
+<div class="quick-shop-content">
+<div class="quick-shop-close cross-button"><span>Close</span>
+</div>
+<div class="quick-shop-form">
+</div>
+</div>
+</div>
+</div>
+<div class="site-account-side side-wrap">
+<a href="#" class="close-account-side close-side"></a>
+<div class="account-side-heading side-heading">
+<span class="account-side-title side-title">Sign in</span>
+</div>
+<div class="side-account-form-wrap">
+<div class="box-content">
+<div class="form-login active">
+<img class="img-label" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Login" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/login.svg"><noscript><img class="img-label"
+                                 src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/login.svg"
+                                 alt="Login"></noscript>
+<form class="majextic-login-form-ajax" data-toggle="validator">
+<label>
+<span class="label">Username or email <span class="required">*</span></span>
+<input name="username" type="text" required>
+</label>
+<label>
+<span class="label">Password <span class="required">*</span></span>
+<input name="password" type="password" required>
+</label>
+<button type="submit" data-button-action class="button">Login</button>
+<input type="hidden" name="action" value="majextic_login">
+<input type="hidden" id="security-login" name="security-login" value="a3b4693e96" /><input type="hidden" name="_wp_http_referer" value="/majextic/wishlist/WOOSW/%5C/%5C%22https:%5C/%5C/demo.leebrosus.com%5C/majextic%5C/wp-content%5C/themes%5C/majextic%5C/assets%5C/images%5C/language-switcher%5C/en.png%5C/" /> </form>
+<a href="https://demo.leebrosus.com/majextic/my-account/lost-password/" class="lostpass-link" title="Lost your password?">Lost your password?</a>
+<div class="login-form-hook">
+</div>
+<div class="login-form-bottom">
+<span class="create-account-text">No account yet?</span>
+<a class="register-link" href="#" title="Register">Create an Account</a>
+</div>
+</div>
+<div class="form-register">
+<img class="img-label" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Register" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/register.svg"><noscript><img class="img-label"
+                                 src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/register.svg"
+                                 alt="Register"></noscript>
+<form method="post" class="woocommerce-form woocommerce-form-register register">
+<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+<label for="reg_email">Email address&nbsp;<span class="required">*</span></label>
+<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value /> </p>
+<p>A link to set a new password will be sent to your email address.</p>
+<div class="woocommerce-privacy-policy-text"><p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="https://demo.leebrosus.com/majextic/?page_id=3" class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
+</div>
+<p class="woocommerce-form-row form-row">
+<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="bcd68b490c" /><input type="hidden" name="_wp_http_referer" value="/majextic/wishlist/WOOSW/%5C/%5C%22https:%5C/%5C/demo.leebrosus.com%5C/majextic%5C/wp-content%5C/themes%5C/majextic%5C/assets%5C/images%5C/language-switcher%5C/en.png%5C/" /> <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="Register">Register</button>
+</p>
+</form>
+<a class="login-link" href="#">Already has an account</a>
+</div>
+<div class="form-lost-password">
+<img class="img-label" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Lost Password" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/register.svg"><noscript><img class="img-label"
+                                 src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/register.svg"
+                                 alt="Lost Password"></noscript>
+<div class="woocommerce-notices-wrapper"></div>
+<form method="post" class="woocommerce-ResetPassword lost_reset_password">
+<p>Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.</p>
+<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+<label for="user_login">Username or email</label>
+<input class="woocommerce-Input woocommerce-Input--text input-text" type="text" name="user_login" id="user_login" autocomplete="username" />
+</p>
+<div class="clear"></div>
+<p class="woocommerce-form-row form-row">
+<input type="hidden" name="wc_reset_password" value="true" />
+<button type="submit" class="woocommerce-Button button" value="Reset password">Reset password</button>
+</p>
+<input type="hidden" id="woocommerce-lost-password-nonce" name="woocommerce-lost-password-nonce" value="aa44318e3c" /><input type="hidden" name="_wp_http_referer" value="/majextic/wishlist/WOOSW/%5C/%5C%22https:%5C/%5C/demo.leebrosus.com%5C/majextic%5C/wp-content%5C/themes%5C/majextic%5C/assets%5C/images%5C/language-switcher%5C/en.png%5C/" />
+</form>
+<a class="login-link" href="#">Already has an account</a>
+</div>
+</div>
+</div>
+</div>
+<div class="wishlist-side-overlay side-overlay"></div>
+<div class="site-search-popup">
+<div class="site-search-popup-wrap">
+<a href="#" class="site-search-popup-close"><span class="screen-reader-text">Close</span></a>
+<div class="site-search">
+<div class="ajax-search">
+<form role="search" method="get" class="woocommerce-product-search" action="https://demo.leebrosus.com/majextic/">
+<div class="majextic-search-product-form">
+<div class="product-cat">
+<div class="product-cat-label">
+<div class="box">
+<span class="product-cat-name">All Category</span>
+<i class="majextic-icon-angle-down"></i>
+<select name="product_cat" id="product_cat1" class="dropdown_product_cat_ajax">
+<option value selected="selected">All Category</option>
+<option class="level-0" value="auto-tires">Auto &amp; Tires</option>
+<option class="level-0" value="auto-safety-accessories">Auto Safety Accessories</option>
+<option class="level-0" value="automotive-interior">Automotive Interior</option>
+<option class="level-0" value="automotive-tools-equipment">Automotive Tools &amp; Equipment</option>
+<option class="level-0" value="brakes-and-brake-parts">Brakes and Brake Parts</option>
+<option class="level-0" value="replacement-parts">Replacement Parts</option>
+<option class="level-0" value="steering-wheel-covers">Steering Wheel Covers</option>
+</select>
+</div>
+</div>
+</div>
+<div class="search-wrapper">
+<input type="search" id="woocommerce-product-search-field-2" class="search-field" placeholder="I’m looking for&hellip;" autocomplete="off" value name="s" />
+<input type="hidden" name="post_type" value="product" />
+</div>
+<button type="submit" value="Search">
+<i class="majextic-icon-search"></i>
+<span>Search</span>
+</button>
+</div>
+</form>
+<div class="ajax-search-result d-none">
+<div class="inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/html" id="tmpl-ajax-live-search-template">
+        <div class="product-item-search">
+            <# if(data.url){ #>
+            <a class="product-link" href="{{{data.url}}}" title="{{{data.title}}}">
+            <# } #>
+                <# if(data.img){#>
+                <img src="{{{data.img}}}" alt="{{{data.title}}}">
+                 <# } #>
+                <div class="product-content">
+                <h3 class="product-title">{{{data.title}}}</h3>
+                <# if(data.price){ #>
+                {{{data.price}}}
+                 <# } #>
+                </div>
+                <# if(data.url){ #>
+            </a>
+            <# } #>
+        </div>
+        </script><button type="button" id="btn-back-to-top">
+<i class="majextic-icon-arrow-up"></i>
+</button> <div class="site-header-cart-side side-wrap">
+<span class="hint--left close-hint-side" aria-label="Close">
+<a href="#" class="close-side">
+<span class="screen-reader-text">Close</span>
+</a>
+</span>
+<div class="cart-side-heading side-heading">
+<span class="cart-side-title side-title">Shopping Cart</span>
+</div>
+<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div> </div>
+<div class="cart-side-overlay side-overlay"></div>
+<div class="majextic-modal modal-coupon" id="modal-cart-coupon">
+<div class="modal-overlay"></div>
+<div class="modal-content">
+<div class="button-close-modal"></div>
+<div class="modal-content-wrap">
+<div class="modal-content-inner">
+<div class="coupons-not-found">
+Have no coupons here! </div>
+</div>
+</div>
+</div>
+</div>
+<div class="site-wishlist-side side-wrap">
+<span class="hint--bounce hint--left close-hint-side" aria-label="Close">
+<a href="#" class="close-wishlist-side close-side"><span class="screen-reader-text">Close</span></a>
+</span>
+<div class="wishlist-side-heading side-heading">
+<span class="wishlist-side-title side-title">Wishlist</span>
+</div>
+<div class="wishlist-side-wrap-content">
+<div class="majextic-wishlist-content-scroll">
+<div class="majextic-wishlist-content">
+</div>
+</div>
+<div class="majextic-wishlist-bottom">
+<a class="button" href="https://demo.leebrosus.com/majextic/wishlist/">Wishlist page</a>
+</div>
+</div>
+</div>
+<div class="wishlist-side-overlay side-overlay"></div>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/demo.leebrosus.com\/majextic"}},{"@type":"ListItem","position":2,"item":{"name":"Wishlist","@id":"https:\/\/demo.leebrosus.com\/majextic\/wishlist\/"}}]}</script>
+<div class="majextic-mobile-nav">
+<div class="menu-scroll-mobile">
+<a href="#" class="mobile-nav-close"><i class="majextic-icon-times"></i></a>
+<div class="mobile-nav-tabs">
+<ul>
+<li class="mobile-tab-title mobile-pages-title active" data-menu="pages">
+<span>Main Menu</span>
+</li>
+<li class="mobile-tab-title mobile-categories-title" data-menu="categories">
+<span>All Categories</span>
+</li>
+</ul>
+</div>
+<nav class="mobile-menu-tab mobile-navigation mobile-pages-menu active" aria-label="Mobile Navigation">
+<div class="handheld-navigation"><ul id="menu-main-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-619"><a href="#"><span class="menu-title">Home</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-620"><a href="https://demo.leebrosus.com/majextic/"><span class="menu-title">Home 1</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-853"><a href="https://demo.leebrosus.com/majextic/home-2/"><span class="menu-title">Home 2</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-852"><a href="https://demo.leebrosus.com/majextic/home-3/"><span class="menu-title">Home 3</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="https://demo.leebrosus.com/majextic/home-4/"><span class="menu-title">Home 4</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-850"><a href="https://demo.leebrosus.com/majextic/home-5/"><span class="menu-title">Home 5</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-849"><a href="https://demo.leebrosus.com/majextic/home-6/"><span class="menu-title">Home 6</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-621"><a href="https://demo.leebrosus.com/majextic/about-us/"><span class="menu-title">About Us</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-264"><a href="https://demo.leebrosus.com/majextic/shop/"><span class="menu-title">Shop</span></a>
+<ul class="sub-menu">
+<li id="menu-item-1581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1581"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=2"><span class="menu-title">Shop &#8211; 2 Columns</span></a></li>
+<li id="menu-item-1582" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1582"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=3"><span class="menu-title">Shop &#8211; 3 Columns</span></a></li>
+<li id="menu-item-1583" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1583"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=4"><span class="menu-title">Shop &#8211; 4 Columns</span></a></li>
+<li id="menu-item-1584" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1584"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=5"><span class="menu-title">Shop &#8211; 5 Columns</span></a></li>
+<li id="menu-item-1585" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1585"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=6&#038;woocommerce_archive_layout=canvas"><span class="menu-title">Shop &#8211; 6 columns</span></a></li>
+<li id="menu-item-1701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1701"><a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1698"><span class="menu-title">Shop &#8211; Template 1</span></a></li>
+<li id="menu-item-1705" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1705"><a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1698"><span class="menu-title">Shop &#8211; Template 2</span></a></li>
+<li id="menu-item-1710" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1710"><a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_wrapper=1706"><span class="menu-title">Shop &#8211; Template 3</span></a></li>
+<li id="menu-item-1714" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1714"><a href="https://demo.leebrosus.com/majextic/shop/?shop_template_before_products=1711"><span class="menu-title">Shop &#8211; Template 4</span></a></li>
+<li id="menu-item-1586" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1586"><a href="https://demo.leebrosus.com/majextic/shop/?shop_custom_colums=6&#038;woocommerce_archive_layout=canvas"><span class="menu-title">Shop &#8211; Sidebar Canvas</span></a></li>
+<li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-1572"><a href="https://demo.leebrosus.com/majextic/product/2-pieces-300-db-super-train-horn-for-suv-trucks-car-boat-motorcycles-new/"><span class="menu-title">Product &#8211; Style 1</span></a></li>
+<li id="menu-item-1554" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1554"><a href="https://demo.leebrosus.com/majextic/product/renogy-60a-dc-to-dc-battery-charger/?woocommerce_detail_product_style=2"><span class="menu-title">Product &#8211; Style 2</span></a></li>
+<li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1571"><a href="https://demo.leebrosus.com/majextic/product/niche-charger-automatic-smart-battery-maintainer-12v-0-75a-for-atv/"><span class="menu-title">Product &#8211; Style 3</span></a></li>
+<li id="menu-item-1573" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1573"><a href="https://demo.leebrosus.com/majextic/product/gooloo-2amp-12v-smart-battery-charger-maintainer-car-trickle-chargers/"><span class="menu-title">Product &#8211; Sidebar Left</span></a></li>
+<li id="menu-item-1574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1574"><a href="https://demo.leebrosus.com/majextic/product/disc-brake-rotor/"><span class="menu-title">Product &#8211; Sidebar Right</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-918"><a href="https://demo.leebrosus.com/majextic/blog/"><span class="menu-title">Blog</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a href="https://demo.leebrosus.com/majextic/blog/"><span class="menu-title">Blog &#8211; Default</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1717"><a href="https://demo.leebrosus.com/majextic/category/lifestyle/"><span class="menu-title">Blog &#8211; Grid</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1718"><a href="https://demo.leebrosus.com/majextic/category/tips-tricks/"><span class="menu-title">Blog &#8211; List</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1719"><a href="https://demo.leebrosus.com/majextic/category/social-media/"><span class="menu-title">Blog &#8211; Right Sidebar</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1587"><a href="https://demo.leebrosus.com/majextic/this-10-min-stretch-routine-can-eliminate-stiffness/"><span class="menu-title">Blog Detail</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-623"><a href="#"><span class="menu-title">Pages</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1556"><a href="https://demo.leebrosus.com/majextic/cart/"><span class="menu-title">Cart</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1557"><a href="https://demo.leebrosus.com/majextic/checkout/"><span class="menu-title">Checkout</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-12 current_page_item menu-item-263"><a href="https://demo.leebrosus.com/majextic/wishlist/"><span class="menu-title">Wishlist</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-622"><a href="https://demo.leebrosus.com/majextic/faqs/"><span class="menu-title">FAQ’s</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-917"><a href="https://demo.leebrosus.com/majextic/404-page/"><span class="menu-title">404 Page</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://demo.leebrosus.com/majextic/icons/"><span class="menu-title">Icons</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-669"><a href="https://demo.leebrosus.com/majextic/contact/"><span class="menu-title">Contact</span></a></li>
+</ul></div> </nav>
+<nav class="mobile-menu-tab mobile-navigation mobile-categories-menu" aria-label="Mobile Navigation">
+<div class="handheld-navigation"><ul id="menu-all-categories" class="menu"><li id="menu-item-854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-854"><a href="#"><i class="menu-icon majextic-icon-tyre"></i><span class="menu-title">Batteries</span></a></li>
+<li id="menu-item-855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-855"><a href="#"><i class="menu-icon majextic-icon-drill"></i><span class="menu-title">Brake disks &#038; pads</span></a></li>
+<li id="menu-item-856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-856"><a href="#"><i class="menu-icon majextic-icon-truck-parts"></i><span class="menu-title">Car care kits</span></a></li>
+<li id="menu-item-857" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-857"><a href="#"><i class="menu-icon majextic-icon-tool"></i><span class="menu-title">Engine Parts</span></a></li>
+<li id="menu-item-858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-858"><a href="#"><i class="menu-icon majextic-icon-motocycle"></i><span class="menu-title">Lighting</span></a></li>
+<li id="menu-item-859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-859"><a href="#"><i class="menu-icon majextic-icon-oil"></i><span class="menu-title">Oil &#038; lubricants</span></a></li>
+<li id="menu-item-860" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-860"><a href="#"><i class="menu-icon majextic-icon-car-filter"></i><span class="menu-title">Service kits</span></a></li>
+<li id="menu-item-861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-861"><a href="#"><i class="menu-icon majextic-icon-ev"></i><span class="menu-title">Steering</span></a></li>
+<li id="menu-item-862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-862"><a href="#"><i class="menu-icon majextic-icon-brackes"></i><span class="menu-title">Suspension</span></a></li>
+<li id="menu-item-863" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-863"><a href="#"><i class="menu-icon majextic-icon-accessories"></i><span class="menu-title">Tires&#038; Wheels</span></a></li>
+</ul></div> </nav>
+</div>
+<div class="majextic-language-switcher-mobile">
+<ul class="menu">
+<li class="item">
+<div class="language-switcher-head">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/en.png"><noscript><img width="18" height="12"
+                            src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/en.png"
+                            alt="WPML"></noscript>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/de.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/de.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/it.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/it.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/hi.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/majextic/wp-content/themes/majextic/assets/images/language-switcher/hi.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="majextic-overlay"></div>
+<link data-minify="1" rel="stylesheet" id="rs-plugin-settings-css" href="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/majextic/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=1693193644" media="all" />
+<style id="rs-plugin-settings-inline-css">
+#rs-demo-id {}
+</style>
+<script id="contact-form-7-js-extra">
+var wpcf7 = {"api":{"root":"https:\/\/demo.leebrosus.com\/majextic\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script id="wc-add-to-cart-js-extra">
+var wc_add_to_cart_params = {"ajax_url":"\/majextic\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/majextic\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.leebrosus.com\/majextic\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+</script>
+<script id="woocommerce-js-extra">
+var woocommerce_params = {"ajax_url":"\/majextic\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/majextic\/?wc-ajax=%%endpoint%%"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/majextic(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/demo.leebrosus.com\/majextic","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script id="woosc-frontend-js-extra">
+var woosc_vars = {"ajax_url":"https:\/\/demo.leebrosus.com\/majextic\/wp-admin\/admin-ajax.php","nonce":"fbd68c4b86","hash":"6","user_id":"0cdb64fab32a05bd393b20c8c351de9f","page_url":"#","open_button":"","open_button_action":"open_popup","menu_action":"open_popup","button_action":"show_table","sidebar_position":"right","message_position":"right-top","message_added":"{name} has been added to Compare list.","message_removed":"{name} has been removed from the Compare list.","message_exists":"{name} is already in the Compare list.","open_bar":"no","bar_bubble":"no","adding":"prepend","click_again":"no","hide_empty":"no","click_outside":"yes","freeze_column":"yes","freeze_row":"yes","scrollbar":"yes","limit":"100","remove_all":"Do you want to remove all products from the compare?","limit_notice":"You can add a maximum of {limit} products to the comparison table.","copied_text":"Share link %s was copied to clipboard!","button_text":"Compare","button_text_added":"Compare","button_normal_icon":"woosc-icon-1","button_added_icon":"woosc-icon-74"};
+</script>
+<script id="woosw-frontend-js-extra">
+var woosw_vars = {"ajax_url":"https:\/\/demo.leebrosus.com\/majextic\/wp-admin\/admin-ajax.php","nonce":"f8eb635b46","menu_action":"open_page","perfect_scrollbar":"yes","wishlist_url":"https:\/\/demo.leebrosus.com\/majextic\/wishlist\/","button_action":"list","message_position":"right-top","button_action_added":"popup","empty_confirm":"This action cannot be undone. Are you sure?","delete_confirm":"This action cannot be undone. Are you sure?","copied_text":"Copied the wishlist link:","menu_text":"Wishlist","button_text":"Add to wishlist","button_text_added":"Browse wishlist","button_normal_icon":"woosw-icon-5","button_added_icon":"woosw-icon-8","button_loading_icon":"woosw-icon-4"};
+</script>
+<script id="wpcvs-frontend-js-extra">
+var wpcvs_vars = {"ajax_url":"https:\/\/demo.leebrosus.com\/majextic\/wp-admin\/admin-ajax.php","nonce":"2a209ad2e3","tooltip_library":"tippy","second_click":"no","is_product":"no","single_change_url":"no","single_replacement":"enable","single_product":".product.product-type-variable","single_name":".summary > .product_title","single_price":".summary > .price","single_desc":".summary > .woocommerce-product-details__short-description","archive_enable":"no","archive_product":".product","archive_image":".attachment-woocommerce_thumbnail","archive_name":".woocommerce-loop-product__title","archive_price":".price","archive_atc":".add_to_cart_button","archive_atc_text":".add_to_cart_button","add_to_cart":"Add to cart","select_options":"Select options","view_cart":"<a href=\"https:\/\/demo.leebrosus.com\/majextic\/cart\/\" class=\"added_to_cart wc-forward\" title=\"View cart\">View cart<\/a>"};
+</script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"\/majextic\/wp-admin\/admin-ajax.php"}};
+</script>
+<script id="majextic-theme-js-extra">
+var majexticVariable = {"ajaxurl":"https:\/\/demo.leebrosus.com\/majextic\/wp-admin\/admin-ajax.php","apply_coupon_nonce":"abb1e3b773","is_checkout":"","quick_view_css":"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/themes\/majextic\/assets\/css\/woocommerce-detail.css"};
+</script>
+<script id="wc-cart-fragments-js-extra">
+var wc_cart_fragments_params = {"ajax_url":"\/majextic\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/majextic\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_21644f6fc502d9b2fad9ae17dece9331","fragment_name":"wc_fragments_21644f6fc502d9b2fad9ae17dece9331","request_timeout":"5000"};
+</script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1170,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Laptop","value":1290,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.15.3","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"container_grid":true,"landing-pages":true,"nested-elements":true},"urls":{"assets":"https:\/\/demo.leebrosus.com\/majextic\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop"],"viewport_mobile":767,"viewport_mobile_extra":880,"viewport_tablet":1024,"viewport_tablet_extra":1170,"viewport_laptop":1290,"woo_carousel_slides_to_show":"5","woo_carousel_slides_to_show_tablet_extra":"4","woo_carousel_slides_to_show_mobile":"1","woo_carousel_slides_to_scroll":"1","woo_carousel_spaceBetween_mobile_extra":{"unit":"px","size":15,"sizes":[]},"woo_carousel_slides_to_show_tablet":"3","global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woo_carousel_spaceBetween":{"unit":"px","size":30,"sizes":[]},"woo_carousel_spaceBetween_laptop":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_tablet_extra":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_tablet":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_mobile":{"unit":"px","size":"","sizes":[]},"woo_carousel_navigation":"dots","woo_carousel_autoplay":"yes","woo_carousel_autoplay_speed":5000},"post":{"id":12,"title":"Wishlist%20%E2%80%93%20Majextic","excerpt":"","featuredImage":false}};
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://demothemedh.b-cdn.net/majextic/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+<script type="rocketlazyloadscript" src="https://demothemedh.b-cdn.net/majextic/wp-content/cache/min/1/0321d7a3abd9d5cb4ff77a0b12a13242.js" data-minify="1" defer></script></body>
+</html>

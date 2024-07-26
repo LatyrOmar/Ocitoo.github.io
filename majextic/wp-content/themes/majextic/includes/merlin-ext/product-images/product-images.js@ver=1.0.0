@@ -1,0 +1,291 @@
+(function ($) {
+    'use strict';
+
+    var single_product_thumbs_caroulsel, single_carousel3;
+    var $product_gallery = $('.woocommerce-product-gallery');
+
+    function singleProductGalleryImages() {
+        var lightbox = $('.single-product .woocommerce-product-gallery__image > a');
+        if (lightbox.length) {
+            lightbox.attr("data-elementor-open-lightbox", "no");
+        }
+        singleProductGalleryImagesCarousel();
+    }
+
+    async function singleProductCarousel3(){
+        if (typeof elementorFrontendConfig === 'undefined') {
+            return;
+        }
+
+        let $slider1 = $('.woocommerce-product-gallery-sticky').clone();
+        $('.woocommerce-product-gallery-sticky').after($slider1);
+        $slider1.addClass('single-image-style-3').wrapInner("<div class='swiper-container'></div>")
+            .find('.swiper-container').append(`<div class="elementor-swiper-button-container">
+                    <div class="elementor-swiper-button elementor-swiper-button-prev">
+                        <i class="eicon-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="elementor-swiper-button elementor-swiper-button-next">
+                        <i class="eicon-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>`)
+            .find('.woocommerce-product-gallery__wrapper').addClass('swiper-wrapper').removeClass('woocommerce-product-gallery__wrapper')
+            .find('.woocommerce-product-gallery__image').removeClass('woocommerce-product-gallery__image').addClass('swiper-slide')
+        const settingCarousel = {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                prevEl: $slider1.find('.elementor-swiper-button-prev').get(0),
+                nextEl: $slider1.find('.elementor-swiper-button-next').get(0),
+            }
+        };
+
+        single_carousel3 = await new Swiper('.woocommerce-product-gallery-sticky .swiper-container', settingCarousel);
+    }
+
+    async function singleProductGalleryImagesCarousel() {
+        if (typeof elementorFrontendConfig === 'undefined') {
+            return;
+        }
+
+        var $silder = $('.flex-control-thumbs', $product_gallery);
+        let $window_width = $(window).width();
+        if ($silder.children().length) {
+            if (!$silder.hasClass('swiper-container')) {
+                $silder.addClass('swiper-container').wrapInner("<div class='swiper-wrapper'></div>");
+                $silder.append('<div class="majextic-swiper-button majextic-swiper-button-prev"><i class="majextic-icon-angle-left"></i></div><div class="majextic-swiper-button majextic-swiper-button-next"><i class="majextic-icon-angle-right"></i></div>');
+                $silder.find('li').addClass('swiper-slide');
+            }
+            const settingCarousel = {
+                slidesPerView: "auto",
+                spaceBetween: 20,
+                navigation: {
+                    prevEl: $silder.find('.majextic-swiper-button-prev').get(0),
+                    nextEl: $silder.find('.majextic-swiper-button-next').get(0),
+                }
+            };
+
+            if ($product_gallery.hasClass('woocommerce-product-gallery-vertical')) {
+                if ($window_width > 768) {
+                    settingCarousel.direction = 'vertical';
+                    $silder.removeClass("swiper-container-horizontal").addClass("swiper-container-vertical");
+                } else {
+                    $silder.removeClass("swiper-container-vertical").addClass("swiper-container-horizontal");
+                }
+            }
+            single_product_thumbs_caroulsel = await new Swiper('.woocommerce-product-gallery .swiper-container', settingCarousel);
+        }
+    }
+
+    $('.woocommerce-product-gallery').on('wc-product-gallery-after-init', function () {
+        singleProductGalleryImages();
+    });
+
+    $(window).resize(function () {
+        var $silder = $('.flex-control-thumbs', $product_gallery);
+        if($silder.length > 0){
+            let $window_width = $(window).width();
+            if ($window_width > 768) {
+                single_product_thumbs_caroulsel.params.direction = 'vertical';
+                $silder.removeClass("swiper-container-horizontal").addClass("swiper-container-vertical");
+            } else {
+                single_product_thumbs_caroulsel.params.direction = 'horizontal';
+                $silder.removeClass("swiper-container-vertical").addClass("swiper-container-horizontal");
+            }
+            single_product_thumbs_caroulsel.update();
+        }
+    });
+
+    function popup_video() {
+        $('.content-single-wrapper').magnificPopup({
+            delegate: '.product-video-360 .btn-video',
+            type: 'iframe',
+            disableOn: 700,
+            removalDelay: 160,
+            midClick: true,
+            closeBtnInside: true,
+            preloader: false,
+            fixedContentPos: false
+        })
+        $('.woocommerce-product-gallery').magnificPopup({
+            type: 'inline',
+            delegate: '.product-video-360 .btn-360',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in',
+            callbacks: {
+                open: function () {
+                    var spin = $('#rotateimages');
+                    var images = spin.data('images');
+                    var imagesarray = images.split(",");
+                    var api;
+                    spin.spritespin({
+                        source: imagesarray,
+                        width: 800,
+                        height: 800,
+                        sense: -1,
+                        responsive: true,
+                        animate: false,
+                        onComplete: function () {
+                            $(this).removeClass('majextic-loading');
+                        }
+                    });
+                    api = spin.spritespin("api");
+                    $('.view-360-prev').click(function () {
+                        api.stopAnimation();
+                        api.prevFrame();
+                    });
+                    $('.view-360-next').click(function () {
+                        api.stopAnimation();
+                        api.nextFrame();
+                    });
+                }
+            }
+        })
+        $('a.btn-360');
+    }
+
+    function setupCarousel(selector) {
+        if (typeof elementorFrontendConfig === 'undefined') {
+            return;
+        }
+        if (typeof elementorFrontendConfig.kit === 'undefined')
+            return;
+        var kit = elementorFrontendConfig.kit;
+        var settingCarousel = {
+            slidesPerGroup: kit.woo_carousel_slides_to_scroll || 1,
+            slidesPerView: kit.woo_carousel_slides_to_show || 4,
+            spaceBetween: kit.woo_carousel_spaceBetween.size || 30,
+            handleElementorBreakpoints: true,
+            watchSlidesVisibility: true,
+            breakpoints: {}
+        }
+        if (kit.woo_carousel_autoplay === 'yes') {
+            settingCarousel.autoplay = {
+                delay: kit.woo_carousel_autoplay_speed
+            }
+        }
+        var elementorBreakpoints = kit.active_breakpoints;
+        var lastBreakpintOption = {
+            slidesPerGroup: settingCarousel.slidesPerGroup,
+            slidesPerView: settingCarousel.slidesPerView,
+            spaceBetween: settingCarousel.spaceBetween
+        }
+        let breakpointsKey = Object.keys(elementorBreakpoints).reverse();
+        for (let _index in breakpointsKey) {
+            var breakpointName = elementorBreakpoints[_index].replace('viewport_', '');
+            let currentSettings = {
+                spaceBetween: +kit['woo_carousel_spaceBetween_' + breakpointName]['size'] || lastBreakpintOption.spaceBetween,
+                slidesPerView: +kit['woo_carousel_slides_to_show_' + breakpointName] || lastBreakpintOption.slidesPerView,
+                slidesPerGroup: +kit['woo_carousel_slides_to_scroll_' + breakpointName] || lastBreakpintOption.slidesPerGroup,
+            }
+            lastBreakpintOption = currentSettings;
+            var viewport = kit['viewport_' + breakpointName];
+            if (breakpointName === 'laptop') {
+                settingCarousel.breakpoints[viewport] = {
+                    slidesPerGroup: settingCarousel.slidesPerGroup,
+                    slidesPerView: settingCarousel.slidesPerView,
+                    spaceBetween: settingCarousel.spaceBetween
+                }
+                viewport -= 100;
+            }
+            settingCarousel.breakpoints[viewport] = currentSettings;
+            if (breakpointName === 'mobile') {
+                settingCarousel.breakpoints[0] = currentSettings;
+            }
+        }
+        var $container = $(selector);
+        $container.append('<div class="products-carousel swiper"><div class="swiper-container"></div></div>');
+        if (kit.woo_carousel_navigation === 'dots' || kit.woo_carousel_navigation === 'both') {
+            $container.addClass('elementor-dots-style-2').find('.products-carousel').append('<div class="swiper-pagination"></div>');
+            settingCarousel.pagination = {
+                el: $container.find('.swiper-pagination'),
+                type: 'bullets',
+                clickable: true,
+            };
+        }
+        if (kit.woo_carousel_navigation === 'arrows' || kit.woo_carousel_navigation === 'both') {
+            $container.append('<div class="elementor-swiper-button elementor-swiper-button-prev"><i class="eicon-chevron-left" aria-hidden="true"></i><span class="elementor-screen-only">Previous</span></div><div class="elementor-swiper-button elementor-swiper-button-next"><i class="eicon-chevron-right" aria-hidden="true"></i><span class="elementor-screen-only">Next</span></div>');
+            settingCarousel.navigation = {
+                prevEl: $container.find('.elementor-swiper-button-prev'),
+                nextEl: $container.find('.elementor-swiper-button-next'),
+            };
+        }
+        $container.find('ul.products').appendTo($container.find('.products-carousel .swiper-container'));
+        if ($container.find('li.product').length > 1) {
+            $container.find('ul.products').addClass('swiper-wrapper').find('>li').addClass('swiper-slide');
+            var gallery_swiper = new Swiper($container.find('.swiper-container').get(0), settingCarousel)
+            $container.data('swiper', gallery_swiper);
+        }
+    }
+
+    function _makeStickyKit() {
+        var top_sticky = 20,
+            $adminBar = $('#wpadminbar'),
+            $element_sticky = $('.elementor-sticky');
+        if ($adminBar.length > 0) {
+            top_sticky += $adminBar.height();
+        }
+        if ($element_sticky.length > 0) {
+            top_sticky += $element_sticky.height();
+        }
+        if (window.innerWidth < 881) {
+            $('.product-sticky-layout').trigger('sticky_kit:detach');
+        } else {
+            $('.product-sticky-layout').stick_in_parent({
+                parent: '.content-single-wrapper',
+                offset_top: top_sticky
+            });
+        }
+    }
+
+    function zoomCustom() {
+        var zoomTarget = $('.woocommerce-product-gallery-zoom .woocommerce-product-gallery__image');
+        var zoom_enabled = 'function' === typeof $.fn.zoom && zoomTarget.length;
+        if (!zoom_enabled) {
+            return;
+        }
+        var zoom_options = $.extend({
+            touch: false
+        }, wc_single_product_params.zoom_options);
+        if ('ontouchstart' in document.documentElement) {
+            zoom_options.on = 'click';
+        }
+        zoomTarget.trigger('zoom.destroy');
+        zoomTarget.zoom(zoom_options);
+        setTimeout(function () {
+            if (zoomTarget.find(':hover').length) {
+                zoomTarget.trigger('mouseover');
+            }
+        }, 100);
+    }
+
+    $(document).ready(function () {
+        setupCarousel('.woocommerce-Tabs-panel--more_seller_product');
+        setupCarousel('.majextic-dokan-more-product');
+        setupCarousel('.related');
+        popup_video();
+        _makeStickyKit();
+        $(window).resize(function () {
+            setTimeout(function () {
+                _makeStickyKit();
+            }, 100);
+        });
+
+    }).on('skeletonScreen-single-product-loaded', function () {
+        jQuery('.woocommerce-product-gallery').wc_product_gallery(wc_single_product_params);
+        singleProductGalleryImages();
+        singleProductCarousel3();
+        zoomCustom();
+
+        var $product_360 = $('.product-video-360').detach();
+        if ($product_360) {
+            $('.woocommerce-product-gallery').append($product_360);
+        }
+    });
+})(jQuery);
